@@ -1,0 +1,85 @@
+{% extends "appGimnasio/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<style>
+    .tabla{
+        margin: 50px auto;
+        width: 600px;
+    }
+    table{
+        text-align: left;
+        width: 100%;
+        border: solid 1px #c587d1;
+    }
+    thead{
+        background-color: #c587d1;
+        color: #fff;
+    }
+    th, td{
+        padding: 5px;
+        border: solid 1px #c587d1;
+    }
+    .contenedor{
+        margin: 50px auto;
+        width: 600px;
+    }
+    .boton{
+        display: inline-block;
+        position: relative;
+        background-color: #c587d1;
+        padding: 10px;
+        border-radius: 5px;
+        border-style: none;
+    }
+    .boton a{
+        text-decoration: none;
+        color: #fff;
+        font-size: 18px;
+    }
+    .boton:hover{
+        background-color: #b94acf;
+    }
+</style>
+
+<header class="masthead text-center text-white" style="background: linear-gradient(0deg, #c587d1 0%, #2b2b2b 100%);">
+    <div class="masthead-content">
+        <div class="container px-5">
+            <h1 class="masthead-heading mb-0">Profesores</h1>
+            <h3 class="mb-0">Temostramos el listado de los profesores con los que contamos y sus dias y horarios</h3>
+        </div>
+    </div>
+</header>
+<main class="tabla">
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+                <th>Correo</th>
+                <th>Salario</th>
+            </tr>
+        </thead>
+        <tbody>    
+            {% for n in profesores %}
+                <tr>
+                    <td>{{n.nombre}}</td>
+                    <td>{{n.apellido}}</td>
+                    <td>{{n.edad}}</td>
+                    <td>{{n.correo}}</td>
+                    <td>{{n.salario}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</main>
+
+    <div class="contenedor">
+        <button class="boton">
+            <a href="{% url 'Formulario' %}">Añadir Profesor</a>
+        </button>
+    </div>
+
+{% endblock %}

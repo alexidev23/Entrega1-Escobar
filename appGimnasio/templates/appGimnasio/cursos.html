@@ -1,0 +1,130 @@
+{% extends "appGimnasio/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<style>
+    .search{
+        width: 400px;
+        height: 40px;
+        outline: none;
+    }
+
+    .tabla{
+        margin: 50px auto;
+        width: 600px;
+    }
+
+    table{
+        text-align: left;
+        width: 100%;
+        border: solid 1px #c587d1;
+    }
+    thead{
+        background-color: #c587d1;
+        color: #fff;
+    }
+    th, td{
+        padding: 5px;
+        border: solid 1px #c587d1;
+    }
+    .contenedor{
+        margin: 50px auto;
+        width: 600px;
+    }
+    .boton{
+        display: inline-block;
+        position: relative;
+        background-color: #c587d1;
+        padding: 10px;
+        border-radius: 5px;
+        border-style: none;
+    }
+    .boton a{
+        text-decoration: none;
+        color: #fff;
+        font-size: 18px;
+    }
+    .boton:hover{
+        background-color: #b94acf;
+    }
+    .boton-1{
+        display: inline-block;
+        position: relative;
+        background-color: #c587d1;
+        color: #fff;
+        padding: 10px;
+        width: 100px;
+        border-radius: 5px;
+        border-style: none;
+    }
+</style>
+
+<header class="masthead text-center text-white" style="background: linear-gradient(0deg, #c587d1 0%, #2b2b2b 100%);">
+    <div class="masthead-content">
+        <div class="container px-5">
+            <h1 class="masthead-heading mb-0">Cursos</h1>
+            <h4 class="mb-0">Ve los cursos que tenemos disponibles con sus dias, horarios y el precio</h4>
+        </div>
+    </div>
+</header>
+
+<div class="tabla">
+    
+    <h3>Podes buscar un curso:</h3>
+
+    <form action="\appGimnasio\buscar\" method="GET">
+        <input type="number" name="costo" id="costo" class="search">
+
+        <input type="submit" value="Buscar" class="boton-1">
+
+    </form>
+</div>
+
+
+
+{% if Cursos %}
+
+<p>Estamos buscando el: {{costo}}</p>
+
+<ul>
+{% for cur in Cursos %}
+    <li> {{cur.curso}} </li>
+    <li> {{cur.costo}} </li>
+    {% endfor %}
+
+</ul>
+
+{% endif %}
+
+
+<main class="tabla">
+    <table>
+        <thead>
+            <tr>
+                <th>Curso</th>
+                <th>Dia</th>
+                <th>Hora</th>
+                <th>Costo</th>
+            </tr>
+        </thead>
+        <tbody>    
+            {% for n in cursos %}
+                <tr>
+                    <td>{{n.curso}}</td>
+                    <td>{{n.dia}}</td>
+                    <td>{{n.hora}}</td>
+                    <td>{{n.costo}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+</main>
+<div class="contenedor">
+    <button class="boton">
+        <a href="{% url 'FormularioCurso' %}">Añadir Curso</a>
+    </button>
+</div>
+
+{% endblock %}

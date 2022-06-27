@@ -1,0 +1,54 @@
+{% extends "appGimnasio/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<header class="masthead text-center text-white" style="background: linear-gradient(0deg, #c587d1 0%, #2b2b2b 100%);">
+    <div class="masthead-content">
+        <div class="container px-5">
+            <h1 class="masthead-heading mb-0">Gimnasio Coder</h1>
+            <h3 class="mb-0">Entramientos de alta calidad</h3>
+        </div>
+    </div>
+</header>
+
+<section id="scroll">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 order-lg-2">
+                <div class="p-5"><img class="img-fluid rounded-circle" src="{%static 'appGimnasio/maquinas.jpg'%}" alt="Maquinas" /></div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="p-5">
+                    <h2 class="display-4">Maquinas Nuevas</h2>
+                    <p>Compramos mas maquinas para que nuestros alumnos tengan un entorno ms comodos, repusimos mas stock de pesas y mancuernas, reacondicionamos las maquinas que ya estaban en el lugar y le dimos un nuevo look al establecimiento</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Content section 2-->
+<section>
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6">
+                <div class="p-5"><img class="img-fluid rounded-circle" src="{%static 'appGimnasio/profesor.png'%}" alt="..." /></div>
+            </div>
+            <div class="col-lg-6">
+                <div class="p-5">
+                    <h2 class="display-4">Contamos con profesores</h2>
+                    <p>Una vez inscripto en el gimnasio vas a contar con un plan de ejercicio y con un profesor para que puedas sacarte las dudas con los ejercicios y puedas realizar correctamente los ejercicios</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Content section 3-->
+<section>
+    <div class="px-5">
+        <h2 class="display-4" style="text-align: center;">Vamos a vencer al COVID-19</h2>
+        <p style="text-align: center;">Necesitamos de tu ayuda. Solo así vamos a lograr que Gimansio Coder sea más seguro para todos.</p>
+    </div>
+</section>
+
+{% endblock %}

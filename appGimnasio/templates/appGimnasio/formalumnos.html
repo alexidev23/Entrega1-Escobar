@@ -1,0 +1,62 @@
+
+{% extends "appGimnasio/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<style>
+    .contenedor{
+        margin: auto;
+        padding-top: 50px;
+        width: 80vh;
+    }
+    label{
+        display: flex;
+    }
+    input{
+        width: 80%;
+    }
+    .contenedor-1{
+        margin: auto;
+        padding: 1em;
+        width: 200px;
+    }
+    .boton-1{
+        display: inline-block;
+        position: relative;
+        background-color: #c587d1;
+        padding: 10px;
+        border-radius: 5px;
+        border-style: none;
+    }
+    .boton-1:hover{
+        background-color: #b94acf;
+    }
+</style>
+
+<header class="masthead text-center text-white" style="background: linear-gradient(0deg, #c587d1 0%, #2b2b2b 100%);">
+    <div class="masthead-content">
+        <div class="container px-5">
+            <h1 class="masthead-heading mb-0">Formulario</h1>
+            <h3 class="mb-0">Agregar Alumno</h3>
+        </div>
+    </div>
+</header>
+
+{% if miFormulario.errors %}
+
+<p style="color: red;"> Están mal los datos, revisar</p>
+
+{% endif %}
+
+<form action="" method="POST">{% csrf_token %}
+    <div class="contenedor">
+        {{miFormulario.as_p}}
+    </div>
+
+    <div class="contenedor-1">
+        <input type="submit" value="Enviar" class="boton-1">
+    </div>
+</form>
+
+{% endblock %}
