@@ -114,13 +114,13 @@ def formularioProf(request):
 
 def buscar(request):
 
-    if  request.GET["costo"]: #if request.method == 'Get':
+    if  request.GET["dia"]: #if request.method == 'Get':
 
-        costo = request.GET['costo'] 
-        print(costo)
-        cursos = Cursos.objects.filter(costo__icontains=costo)
+        dia = request.GET['dia'] 
+        print(dia)
+        cursos = Cursos.objects.filter(dia__icontains=dia)
         print(cursos)
-        return render(request, "appGimnasio/cursos.html", {"cursos":cursos, "costo":costo})
+        return render(request, "appGimnasio/cursos.html", {"cursos":cursos,"dia":dia})
 
     else: 
         respuesta = "No enviaste datos"
