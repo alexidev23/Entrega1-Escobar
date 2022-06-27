@@ -58,6 +58,9 @@
         border-radius: 5px;
         border-style: none;
     }
+    .texto{
+        font-size: 25px;
+    }
 </style>
 
 <header class="masthead text-center text-white" style="background: linear-gradient(0deg, #c587d1 0%, #2b2b2b 100%);">
@@ -71,29 +74,17 @@
 
 <div class="tabla">
     
-    <h3>Podes buscar un curso:</h3>
+    <h3>Podes buscar un curso por el dia:</h3>
 
-    <form action="\appGimnasio\buscar\" method="GET">
-        <input type="number" name="costo" id="costo" class="search">
+    <form action="buscar\" method="GET">
+        <input type="text" name="dia" class="search">
 
         <input type="submit" value="Buscar" class="boton-1">
 
     </form>
 </div>
 
-
-
-{% if Cursos %}
-
-<p>Estamos buscando el: {{costo}}</p>
-
-<ul>
-{% for cur in Cursos %}
-    <li> {{cur.curso}} </li>
-    <li> {{cur.costo}} </li>
-    {% endfor %}
-
-</ul>
+{% if cursos %}
 
 {% endif %}
 
