@@ -85,9 +85,17 @@
 </div>
 
 {% if cursos %}
+    <p class="text-center fw-bold">Estamos buscando el: {{dia}}</p>
 
-{% endif %}
+    <ul>
+    {% for cur in Cursos %}
+        <li> {{cur.curso}} </li>
+        <li> {{cur.costo}} </li>
+        {% endfor %}
 
+    </ul>
+
+    {% endif %}     
 
 <main class="tabla">
     <table>
